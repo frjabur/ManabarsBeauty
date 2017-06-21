@@ -32,7 +32,10 @@ using Ensage.Common.Objects;
             }
 
             var enemies = EntityManager<Hero>.Entities.Where(e => e.IsVisible && e.IsAlive && !e.IsIllusion && e.Team != team)
-                    .ToList();
+                                                      .Where(e => e.Position.Distance(pos) < this.Config.Range.Value.Value)
+                                      .OrderBy(e => e.Position.Distance(pos))
+                                     // .ToArray();    
+                .ToList();
             foreach (var enemy in enemies)
             {
                 var start = HUDInfo.GetHPbarPosition(enemy) + new Vector2(0, HUDInfo.GetHpBarSizeY(enemy) + 1);
