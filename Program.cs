@@ -1,18 +1,23 @@
 ﻿namespace Manabars
 {
     using System;
-    using System.Linq;
 using Ensage.Common.Menu;
 using Ensage.Common.Objects;
     using Ensage;
     using Ensage.Common;
-    using Ensage.SDK.Service;
     using Ensage.SDK.Service.Metadata;
     using Ensage.SDK.TargetSelector;
-         using Ensage.SDK.Extensions;
+
+
+    using System.Collections.Generic;
+    using System.ComponentModel.Composition;
+    using System.Linq;
+
+    using Ensage.SDK.Extensions;
     using Ensage.SDK.Helpers;
-
-
+    using Ensage.SDK.Service;
+    using Ensage.SDK.TargetSelector.Config;
+    using Ensage.SDK.TargetSelector.Metadata;
 
     using SharpDX;
 
