@@ -48,6 +48,9 @@
     <Reference Include="SharpDX">
       <HintPath>C:\EnsageSharpTest\References\SharpDX.dll</HintPath>
     </Reference>
+        <Reference Include="Ensage.SDK">
+      <HintPath>C:\Program Files (x86)\LLL\References\Ensage.SDK.dll</HintPath>
+    </Reference>
     <Reference Include="SharpDX.Direct3D9">
       <HintPath>C:\EnsageSharpTest\References\SharpDX.Direct3D9.dll</HintPath>
     </Reference>
