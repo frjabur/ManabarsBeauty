@@ -21,6 +21,38 @@ using Ensage.Common.Objects;
 
     using SharpDX;
 
+    public abstract class SelectorBase : ControllableService, ITargetSelector
+    {
+        protected SelectorBase(IServiceContext context)
+        {
+            this.Owner = context.Owner;
+            this.Targets = new FrameCache<IEnumerable<Unit>>(this.GetTargetsImpl);
+        }
+
+        protected Unit Owner { get; }
+
+        protected FrameCache<IEnumerable<Unit>> Targets { get; }
+
+        public virtual IEnumerable<Unit> GetTargets()
+        {
+            return this.Targets.Value;
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                this.Targets?.Dispose();
+            }
+
+            base.Dispose(disposing);
+        }
+
+        protected abstract IEnumerable<Unit> GetTargetsImpl();
+    }
+}
+     
+    
     internal class Program
     {
         #region Methods
