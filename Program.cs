@@ -6,7 +6,9 @@ using Ensage.Common.Menu;
 using Ensage.Common.Objects;
     using Ensage;
     using Ensage.Common;
-         using Ensage.SDK;
+    using Ensage.SDK.Service;
+    using Ensage.SDK.Service.Metadata;
+    using Ensage.SDK.TargetSelector;
 
 
     using SharpDX;
