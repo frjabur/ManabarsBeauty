@@ -17,7 +17,7 @@
 
 ﻿namespace Manabars
 {
-    [Hero(ClassId.CDOTA_Unit_Hero_EmberSpirit)]
+   
     internal class Program
     {
         #region Methods
@@ -28,7 +28,7 @@
                 return;
             }
             
-            var hero = unit as Hero;
+            var hero = _currentHero.Hero;
             
             var player = ObjectManager.LocalPlayer;
             if (player == null || player.Team == Team.Observer)
