@@ -21,37 +21,6 @@ using Ensage.Common.Objects;
 
     using SharpDX;
 
-    public abstract class SelectorBase : ControllableService, ITargetSelector
-    {
-        protected SelectorBase(IServiceContext context)
-        {
-            this.Owner = context.Owner;
-            this.Targets = new FrameCache<IEnumerable<Unit>>(this.GetTargetsImpl);
-        }
-
-        protected Unit Owner { get; }
-
-        protected FrameCache<IEnumerable<Unit>> Targets { get; }
-
-        public virtual IEnumerable<Unit> GetTargets()
-        {
-            return this.Targets.Value;
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                this.Targets?.Dispose();
-            }
-
-            base.Dispose(disposing);
-        }
-
-        protected abstract IEnumerable<Unit> GetTargetsImpl();
-    }
-}
-     
     
     internal class Program
     {
@@ -67,14 +36,10 @@ using Ensage.Common.Objects;
             {
                 return;
             }
-        }
-            protected override IEnumerable<Unit> GetTargetsImpl()
-            {
-            var pos = Game.MousePosition;
- var team = enemy.Owner.Team;
-            var enemies = EntityManager<Hero>.Entities.Where(e => e.IsVisible && e.IsAlive && !e.IsIllusion && e.Team != team)
-                                                      .Where(e => e.Position.Distance(pos) < enemy.Config.Range.Value.Value)
-                                      .OrderBy(e => e.Position.Distance(pos))
+        private IEnumerable<Unit> Remnants
+             var enemies =
+            => ObjectManager.GetEntities<Unit>().Where(x => x.Name == "npc_dota_ember_spirit_remnant");
+                
                                      // .ToArray();    
                 .ToList();
             foreach (var enemy in enemies)
