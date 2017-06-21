@@ -34,7 +34,7 @@ using Ensage.Common.Objects;
                 var manaperc = enemy.Mana / enemy.MaximumMana;
                 var size = new Vector2(HUDInfo.GetHPBarSizeX(), HUDInfo.GetHpBarSizeY() - 6);
                 // Draw background
-                Drawing.DrawRect(start, size + new Vector2(1, 1), new Color(0, 0, 50, 150));
+                Drawing.DrawRect(start, size + new Vector2(-3, -3), new Color(0, 0, 50, 150));
                 // Draw manabar
                 Drawing.DrawRect(start, new Vector2(size.X * manaperc, size.Y), Color.RoyalBlue);
                 // Draw frame
