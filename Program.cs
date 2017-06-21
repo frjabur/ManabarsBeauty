@@ -25,7 +25,7 @@ using Ensage.Common.Objects;
             }
 
             var enemies =
-                ObjectManager.GetEntities<Hero>()
+
                     .Where(x => x.IsVisible && x.IsAlive && x.MaximumMana > 0 && !x.IsIllusion && x.Team != player.Team)
                     .ToList();
             foreach (var enemy in enemies)
