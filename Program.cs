@@ -29,10 +29,8 @@ using Ensage.Common.Objects;
                 return;
             }
 
-            var enemies =
-                EntityManager<Hero>()
-                    .Where(x => x.IsVisible && x.IsAlive && x.MaximumMana > 0 && !x.IsIllusion && x.Team != player.Team)
-                    .ToList();
+            var enemies = EntityManager<Hero>.Entities.Where(e => e.IsVisible && e.IsAlive && !e.IsIllusion && e.Team != team)
+
             foreach (var enemy in enemies)
             {
                 var start = HUDInfo.GetHPbarPosition(enemy) + new Vector2(0, HUDInfo.GetHpBarSizeY(enemy) + 1);
