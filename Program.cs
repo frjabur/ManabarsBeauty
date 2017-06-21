@@ -31,9 +31,15 @@ using Ensage.Common.Objects;
             {
                 return;
             }
+            
+            var hero = unit as Hero;
+            
             var player = ObjectManager.LocalPlayer;
             if (player == null || player.Team == Team.Observer)
             {
+
+                
+                
                 return;
             }
             var enemies =
@@ -42,7 +48,7 @@ using Ensage.Common.Objects;
                     .ToList();
             foreach (var enemy in enemies)
             {
-                var start = HUDInfo.GetHPbarPosition(MyHero) + new Vector2(0, HUDInfo.GetHpBarSizeY(MyHero) + 1);
+                var start = HUDInfo.GetHPbarPosition(hero) + new Vector2(0, HUDInfo.GetHpBarSizeY(hero) + 1);
                 var manaperc = enemy.Mana / enemy.MaximumMana;
                 var size = new Vector2(HUDInfo.GetHPBarSizeX(), HUDInfo.GetHpBarSizeY() - 6);
                 // Draw background
