@@ -30,6 +30,8 @@ using Ensage.Common.Objects;
             {
                 return;
             }
+            protected override IEnumerable<Unit> GetTargetsImpl()
+            {
             var pos = Game.MousePosition;
  var team = enemy.Owner.Team;
             var enemies = EntityManager<Hero>.Entities.Where(e => e.IsVisible && e.IsAlive && !e.IsIllusion && e.Team != team)
