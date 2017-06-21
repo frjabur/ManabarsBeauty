@@ -11,7 +11,8 @@
     internal class Program
     {
         #region Methods
-
+        private static float DigSize => (float)Members.Menu.Item("manaBars.Nums.Size").GetValue<Slider>().Value / 100;
+        private static float ManaBarSize => (float) Members.Menu.Item("manaBars.Size").GetValue<Slider>().Value/100;
         private static void Drawing_OnDraw(EventArgs args)
         {
             if (!Game.IsInGame)
@@ -30,9 +31,9 @@
                     .ToList();
             foreach (var enemy in enemies)
             {
-                var start = HUDInfo.GetHPbarPosition(enemy) + new Vector2(0, HUDInfo.GetHpBarSizeY(enemy) + 1);
+                var start = HUDInfo.GetHPbarPosition(enemy) + new Vector2(0, HUDInfo.GetHpBarSizeY(enemy) - 2);
                 var manaperc = enemy.Mana / enemy.MaximumMana;
-                var size = new Vector2(HUDInfo.GetHPBarSizeX(enemy), HUDInfo.GetHpBarSizeY(enemy) / 2);
+                var size = new Vector2(HUDInfo.GetHPBarSizeX(), HUDInfo.GetHpBarSizeY()*ManaBarSize);
                 // Draw background
                 Drawing.DrawRect(start, size + new Vector2(1, 1), new Color(0, 0, 50, 150));
                 // Draw manabar
