@@ -1,27 +1,23 @@
-﻿namespace Manabars
-{
     using System;
-using Ensage.Common.Menu;
-using Ensage.Common.Objects;
+    using Ensage.Common.Menu;
+    using Ensage.Common.Objects;
     using Ensage;
     using Ensage.Common;
     using Ensage.SDK.Service.Metadata;
     using Ensage.SDK.TargetSelector;
-
-
     using System.Collections.Generic;
     using System.ComponentModel.Composition;
     using System.Linq;
-
     using Ensage.SDK.Extensions;
     using Ensage.SDK.Helpers;
     using Ensage.SDK.Service;
     using Ensage.SDK.TargetSelector.Config;
     using Ensage.SDK.TargetSelector.Metadata;
-
     using SharpDX;
 
-    
+﻿namespace Manabars
+{
+    [Hero(ClassId.CDOTA_Unit_Hero_EmberSpirit)]
     internal class Program
     {
         #region Methods
