@@ -32,8 +32,8 @@ using Ensage.Common.Objects;
             }
  var team = this.Owner.Team;
             var enemies = EntityManager<Hero>.Entities.Where(e => e.IsVisible && e.IsAlive && !e.IsIllusion && e.Team != team)
-                                                      .Where(e => e.Position.Distance(pos) < this.Config.Range.Value.Value)
-                                      .OrderBy(e => e.Position.Distance(pos))
+                                                      .Where(e => e.Position.Distance < Config.Range.Value.Value)
+                                      .OrderBy(e => e.Position.Distance)
                                      // .ToArray();    
                 .ToList();
             foreach (var enemy in enemies)
