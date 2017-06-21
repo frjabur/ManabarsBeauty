@@ -30,7 +30,7 @@ using Ensage.Common.Objects;
                     .ToList();
             foreach (var enemy in enemies)
             {
-                var start = HUDInfo.GetHPbarPosition(enemy) + new Vector2(1, HUDInfo.GetHpBarSizeY(enemy) + 3);
+                var start = HUDInfo.GetHPbarPosition(enemy) + new Vector2(-1, HUDInfo.GetHpBarSizeY(enemy) + 3);
                 var manaperc = enemy.Mana / enemy.MaximumMana;
                 var size = new Vector2(HUDInfo.GetHPBarSizeX(), HUDInfo.GetHpBarSizeY() - 6);
                 // Draw background
