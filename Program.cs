@@ -34,11 +34,11 @@ using Ensage.Common.Objects;
                 var manaperc = enemy.Mana / enemy.MaximumMana;
                 var size = new Vector2(HUDInfo.GetHPBarSizeX(), HUDInfo.GetHpBarSizeY() - 6);
                 // Draw background
-                Drawing.DrawRect(start, size + new Vector2(-3, -3), new Color(0, 0, 50, 150));
+                Drawing.DrawRect(start, size + new Vector2(0, 0), new Color(0, 0, 50, 150));
                 // Draw manabar
                 Drawing.DrawRect(start, new Vector2(size.X * manaperc, size.Y), Color.RoyalBlue);
                 // Draw frame
-                Drawing.DrawRect(start + new Vector2(-1, -1), size + new Vector2(0, 0), Color.Black, true);
+                Drawing.DrawRect(start + new Vector2(0, 0), size + new Vector2(0, 0), Color.Black, true);
                 // Draw text
                 var text = string.Format("{0} / {1}", (int)enemy.Mana, (int)enemy.MaximumMana);
                 var textSize = Drawing.MeasureText(text, "Arial", new Vector2(size.Y * 2, size.X), FontFlags.AntiAlias);
