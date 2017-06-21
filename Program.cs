@@ -43,7 +43,7 @@
                 var text = string.Format("{0} / {1}", (int)enemy.Mana, (int)enemy.MaximumMana);
                 var textSize = Drawing.MeasureText(text, "Arial", new Vector2(size.Y * 2, size.X), FontFlags.AntiAlias);
                 var textPos = start + new Vector2(size.X / 2 - textSize.X / 2, -textSize.Y / 2 + 2);
-
+            }
         }
 
         private static void Main()
