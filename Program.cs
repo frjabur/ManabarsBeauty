@@ -31,9 +31,9 @@ using Ensage.Common.Objects;
                 return;
             }
             var pos = Game.MousePosition;
- var team = this.Owner.Team;
+ var team = enemy.Owner.Team;
             var enemies = EntityManager<Hero>.Entities.Where(e => e.IsVisible && e.IsAlive && !e.IsIllusion && e.Team != team)
-                                                      .Where(e => e.Position.Distance(pos) < this.Config.Range.Value.Value)
+                                                      .Where(e => e.Position.Distance(pos) < enemy.Config.Range.Value.Value)
                                       .OrderBy(e => e.Position.Distance(pos))
                                      // .ToArray();    
                 .ToList();
