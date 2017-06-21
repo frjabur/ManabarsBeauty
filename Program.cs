@@ -30,6 +30,7 @@ using Ensage.Common.Objects;
             {
                 return;
             }
+        }
             protected override IEnumerable<Unit> GetTargetsImpl()
             {
             var pos = Game.MousePosition;
