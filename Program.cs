@@ -12,8 +12,8 @@ using Ensage.Common.Objects;
     internal class Program
     {
         #region Methods
-        private static float DigSize => (float)enemy.Menu.Item("manaBars.Nums.Size").GetValue<Slider>().Value / 100;
-        private static float ManaBarSize => (float) enemy.Menu.Item("manaBars.Size").GetValue<Slider>().Value/100;
+        private static float DigSize => (float) Menu.Item("manaBars.Nums.Size").GetValue<Slider>().Value / 100;
+        private static float ManaBarSize => (float) Menu.Item("manaBars.Size").GetValue<Slider>().Value/100;
         private static void Drawing_OnDraw(EventArgs args)
         {
             if (!Game.IsInGame)
