@@ -32,7 +32,7 @@ using Ensage.Common.Objects;
             {
                 var start = HUDInfo.GetHPbarPosition(enemy) + new Vector2(0, HUDInfo.GetHpBarSizeY(enemy) - 2);
                 var manaperc = enemy.Mana / enemy.MaximumMana;
-                var size = new Vector2(HUDInfo.GetHPBarSizeX(), HUDInfo.GetHpBarSizeY() - 2);
+                var size = new Vector2(HUDInfo.GetHPBarSizeX(), HUDInfo.GetHpBarSizeY() - 10);
                 // Draw background
                 Drawing.DrawRect(start, size + new Vector2(1, 1), new Color(0, 0, 50, 150));
                 // Draw manabar
