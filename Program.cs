@@ -6,6 +6,8 @@ using Ensage.Common.Menu;
 using Ensage.Common.Objects;
     using Ensage;
     using Ensage.Common;
+         using Ensage.SDK;
+
 
     using SharpDX;
 
@@ -25,7 +27,7 @@ using Ensage.Common.Objects;
             }
 
             var enemies =
-                ObjectManager.GetEntities<Hero>()
+                EntityManager<Hero>()
                     .Where(x => x.IsVisible && x.IsAlive && x.MaximumMana > 0 && !x.IsIllusion && x.Team != player.Team)
                     .ToList();
             foreach (var enemy in enemies)
