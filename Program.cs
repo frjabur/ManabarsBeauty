@@ -36,19 +36,17 @@ using Ensage.Common.Objects;
             {
                 return;
             }
-        private IEnumerable<Unit> Remnants
-             var enemies =
-            => ObjectManager.GetEntities<Unit>().Where(x => x.Name == "npc_dota_ember_spirit_remnant");
-                
-                                     // .ToArray();    
-                .ToList();
+            var enemies =
+                ObjectManager.GetEntities<Hero>()
+                    .Where(x => x.IsVisible && x.IsAlive && x.MaximumMana > 0 && !x.IsIllusion && x.Team != player.Team)
+                    .ToList();
             foreach (var enemy in enemies)
             {
-                var start = HUDInfo.GetHPbarPosition(enemy) + new Vector2(0, HUDInfo.GetHpBarSizeY(enemy) + 1);
+                var start = HUDInfo.GetHPbarPosition(MyHero) + new Vector2(0, HUDInfo.GetHpBarSizeY(MyHero) + 1);
                 var manaperc = enemy.Mana / enemy.MaximumMana;
                 var size = new Vector2(HUDInfo.GetHPBarSizeX(), HUDInfo.GetHpBarSizeY() - 6);
                 // Draw background
-                Drawing.DrawRect(start, size + new Vector2(0, 0), new Color(0, 0, 50, 150));
+                Drawing.DrawRect(start, size + new Vector2(0, 0), new Color(150, 0, 50, 150));
                 // Draw manabar
                 Drawing.DrawRect(start, new Vector2(size.X * manaperc, size.Y), Color.RoyalBlue);
                 // Draw frame
