@@ -38,7 +38,7 @@ using Ensage.Common.Objects;
                 // Draw manabar
                 Drawing.DrawRect(start, new Vector2(size.X * manaperc, size.Y), Color.RoyalBlue);
                 // Draw frame
-                Drawing.DrawRect(start + new Vector2(-1, -1), size + new Vector2(-3, -3), Color.Black, true);
+                Drawing.DrawRect(start + new Vector2(-1, -1), size + new Vector2(3, -3), Color.Black, true);
                 // Draw text
                 var text = string.Format("{0} / {1}", (int)enemy.Mana, (int)enemy.MaximumMana);
                 var textSize = Drawing.MeasureText(text, "Arial", new Vector2(size.Y * 2, size.X), FontFlags.AntiAlias);
